@@ -31,7 +31,7 @@ $(document).ready(function() {
 
     var options = {
 			slidesToScroll: 1,
-			slidesToShow: 3,
+			slidesToShow: 1,
 			loop: true,
 			infinite: true,
 			autoplay: false,
@@ -42,10 +42,23 @@ $(document).ready(function() {
     var carousels = bulmaCarousel.attach('.carousel', options);
 
     // Loop on each carousel initialized
-    for(var i = 0; i < carousels.length; i++) {
+    for(let i = 0; i < carousels.length; i++) {
     	// Add listener to  event
     	carousels[i].on('before:show', state => {
     		console.log(state);
+        if (state.next !== undefined && carousels[i].items) {
+          let item = carousels[i].items[state.next];
+          if (item) {
+            let node = item.node || item;
+            if (node && typeof node.querySelector === 'function') {
+              let video = node.querySelector('video');
+              if (video) {
+                video.currentTime = 0;
+                video.play();
+              }
+            }
+          }
+        }
     	});
     }
 

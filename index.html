@@ -32,6 +32,7 @@
   <script defer src="./static/js/fontawesome.all.min.js"></script>
   <script src="./static/js/bulma-carousel.min.js"></script>
   <script src="./static/js/bulma-slider.min.js"></script>
+  <script src="./static/js/index.js"></script>
   <script type="module" src="https://unpkg.com/@google/model-viewer/dist/model-viewer.min.js"></script>
   <!-- <script src="http://popcornjs.org/code/dist/popcorn-complete.js"></script> -->
 </head>
@@ -43,11 +44,14 @@
     <div class="container is-max-desktop">
       <div class="columns is-centered">
         <div class="column has-text-centered">
-          <h1 class="title is-1 publication-title" style="font-size:28px;">CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction</h1>
+          <h1 class="title is-1 publication-title" style="font-size:40px;">
+            CARI4D: Category Agnostic 4D Reconstruction of<br>
+            Human-Object Interaction
+          </h1>
           <div class="is-size-5 publication-authors">
             <span class="author-block">
-              <a href="https://xiexh20.github.io/">Xianghui Xie</a><sup>1,2,3,4</sup>,
-              <a href="https://research.nvidia.com/person/bowen-wen">Bowen Wen</a><sup>1</sup>,
+              <a href="https://xiexh20.github.io/">Xianghui Xie</a><sup>1,2,3,4,*</sup>,
+              <a href="https://wenbowen123.github.io/">Bowen Wen</a><sup>1,<svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><!-- <i class="fa fa-envelope"></i> Font Awesome fontawesome.com --></sup>,
               <a href="https://research.nvidia.com/person/yan-chang">Yan Chang</a><sup>1</sup>,
               <a href="https://research.nvidia.com/person/hesam-rabeti">Hesam Rabeti</a><sup>1</sup>,
               <a href="https://research.nvidia.com/person/jiefeng-li">Jiefeng Li</a><sup>1</sup>,
@@ -62,11 +66,16 @@
           </div>
           <br>
 
-          <div class="is-size-5 publication-authors">
-            <span class="author-block"><sup>1</sup>NVIDIA</span>
-            <span class="author-block"><sup>2</sup>University of Tübingen</span>
-            <span class="author-block"><sup>3</sup>Tübingen AI Center</span>
-            <span class="author-block"><sup>4</sup>Max Planck Institute for Informatics</span>
+          <div class="is-size-6 publication-authors">
+            <span class="author-block" style="margin-right: 20px;"><sup>1</sup>NVIDIA</span>
+            <span class="author-block" style="margin-right: 20px;"><sup>2</sup>University of Tübingen</span>
+            <span class="author-block" style="margin-right: 20px;"><sup>3</sup>Tübingen AI Center</span>
+            <span class="author-block" style="margin-right: 20px;"><sup>4</sup>Max Planck Institute for Informatics</span>
+          </div>
+          <div class="is-size-6 publication-authors">
+            * Work done during internship at NVIDIA
+            <br>
+            <svg class="svg-inline--fa fa-envelope fa-w-16" aria-hidden="true" focusable="false" data-prefix="fa" data-icon="envelope" role="img" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512" data-fa-i2svg=""><path fill="currentColor" d="M502.3 190.8c3.9-3.1 9.7-.2 9.7 4.7V400c0 26.5-21.5 48-48 48H48c-26.5 0-48-21.5-48-48V195.6c0-5 5.7-7.8 9.7-4.7 22.4 17.4 52.1 39.5 154.1 113.6 21.1 15.4 56.7 47.8 92.2 47.6 35.7.3 72-32.8 92.3-47.6 102-74.1 131.6-96.3 154-113.7zM256 320c23.2.4 56.6-29.2 73.4-41.4 132.7-96.3 142.8-104.7 173.4-128.7 5.8-4.5 9.2-11.5 9.2-18.9v-19c0-26.5-21.5-48-48-48H48C21.5 64 0 85.5 0 112v19c0 7.4 3.4 14.3 9.2 18.9 30.6 23.9 40.7 32.4 173.4 128.7 16.8 12.2 50.2 41.8 73.4 41.4z"></path></svg><!-- <i class="fa fa-envelope"></i> Font Awesome fontawesome.com --> Corresponding author
           </div>
 
           <!-- <img src="static/images/nvlogo.png" style="max-height: 150px"> -->
@@ -125,14 +134,14 @@
         <div class="content has-text-justified">
           <p>
 
-            Accurate capture of human-object interaction from ubiquitous sensors like RGB cameras is important for applications in human understanding, gaming, and robot learning. 
-            However, inferring 4D interactions from a single RGB view is highly challenging due to the unknown object and human information, depth ambiguity, occlusion, and complex motion, 
-            which hinder consistent 3D and temporal reconstruction. Previous methods simplify the setup by assuming ground truth object template or constraining to a limited set of 
-            object categories. We present CARI4D, the first category-agnostic method that reconstructs spatially and temporarily consistent 4D human-object interaction at metric scale 
-            from monocular RGB videos. To this end, we propose  a pose hypothesis selection algorithm that robustly integrates the individual predictions from foundation models, 
-            jointly refine them through a learned render-and-compare paradigm to ensure spatial, temporal and pixel alignment,  and finally reasoning about intricate contacts 
-            for further refinement satisfying physical constraints. 
-            Experiments show that our method outperforms prior art by 38% on in-distribution dataset and 36% on unseen dataset in terms of reconstruction error. 
+            Accurate capture of human-object interaction from ubiquitous sensors like RGB cameras is important for applications in human understanding, gaming, and robot learning.
+            However, inferring 4D interactions from a single RGB view is highly challenging due to the unknown object and human information, depth ambiguity, occlusion, and complex motion,
+            which hinder consistent 3D and temporal reconstruction. Previous methods simplify the setup by assuming ground truth object template or constraining to a limited set of
+            object categories. We present CARI4D, the first category-agnostic method that reconstructs spatially and temporarily consistent 4D human-object interaction at metric scale
+            from monocular RGB videos. To this end, we propose  a pose hypothesis selection algorithm that robustly integrates the individual predictions from foundation models,
+            jointly refine them through a learned render-and-compare paradigm to ensure spatial, temporal and pixel alignment,  and finally reasoning about intricate contacts
+            for further refinement satisfying physical constraints.
+            Experiments show that our method outperforms prior art by 38% on in-distribution dataset and 36% on unseen dataset in terms of reconstruction error.
             Our model generalizes beyond the training categories and thus can be applied zero-shot to in-the-wild internet videos. Our code and pretrained models will be publicly released.
             </p>
         </div>
@@ -150,8 +159,8 @@
         <h2 class="title is-3">Overview</h2>
         <div class="content has-text-justified">
           <p>
-            Foundation models for shape, pose, and scene reconstruction provide strong priors yet individual predictions do not align 
-            and can suffer from noisy input. Our key idea is to design a framework that integrates the predictions to obtain a robust 
+            Foundation models for shape, pose, and scene reconstruction provide strong priors yet individual predictions do not align
+            and can suffer from noisy input. Our key idea is to design a framework that integrates the predictions to obtain a robust
             initialization and then design a category agnostic interaction reasoning module to improve contact coherency.
 
           </p>
@@ -176,26 +185,28 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Comparison on BEHAVE dataset</h2>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">VisTracker</div>
-          <div class="column">Ours</div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-vistracker">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">VisTracker</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="behave-vistracker" autoplay controls muted loop playsinline height="100%">
+              <source src="static/videos/behave-vistracker.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-intertrack">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">InterTrack</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="behave-intertrack" autoplay controls muted loop playsinline height="100%">
+              <source src="static/videos/behave-intertrack.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/behave-vistracker.mp4" type="video/mp4">
-        </video>
-
-        <br>
-        <br>
-
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">InterTrack</div>
-          <div class="column">Ours</div>
-        </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/behave-intertrack.mp4" type="video/mp4">
-        </video>
       </div>
     </div>
 
@@ -204,24 +215,28 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">Comparison on InterCap dataset</h2>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">VisTracker</div>
-          <div class="column">Ours</div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-vistracker">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">VisTracker</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="intercap-vistracker" autoplay controls muted loop playsinline height="100%">
+              <source src="static/videos/intercap-vistracker.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-pico">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">PICO</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="intercap-pico" autoplay controls muted loop playsinline height="100%">
+              <source src="static/videos/intercap-pico.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/intercap-vistracker.mp4" type="video/mp4">
-        </video>
-        <br>
-        <br>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">PICO</div>
-          <div class="column">Ours</div>
-        </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/intercap-pico.mp4" type="video/mp4">
-        </video>
       </div>
     </div>
 
@@ -230,54 +245,66 @@
     <div class="columns is-centered has-text-centered">
       <div class="column is-four-fifths">
         <h2 class="title is-3">In the wild internet videos</h2>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">InterTrack</div>
-          <div class="column">Ours</div>
+        <div id="results-carousel" class="carousel results-carousel">
+          <div class="item item-intertrack-box">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">InterTrack</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="wild-intertrack-box" autoplay controls muted loop playsinline style="height: 400px; width: 100%; object-fit: contain;">
+              <source src="static/videos/wild-intertrack-box.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-pico-weight">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">PICO</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="wild-pico-weight" autoplay controls muted loop playsinline style="height: 400px; width: 100%; object-fit: contain;">
+              <source src="static/videos/wild-pico-weight.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-vistracker-gas">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">VisTracker</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="wild-vistracker-gas" autoplay controls muted loop playsinline style="height: 400px; width: 100%; object-fit: contain;">
+              <source src="static/videos/wild-vistracker-gas.mp4" type="video/mp4">
+            </video>
+          </div>
+          <div class="item item-vistracker-jerry">
+            <div class="columns is-centered has-text-centered is-mobile" style="font-size: 1rem;">
+              <div class="column">Input video</div>
+              <div class="column">VisTracker</div>
+              <div class="column">Ours</div>
+            </div>
+            <video poster="" id="wild-vistracker-jerry" autoplay controls muted loop playsinline style="height: 400px; width: 100%; object-fit: contain;">
+              <source src="static/videos/wild-vistracker-jerry.mp4" type="video/mp4">
+            </video>
+          </div>
         </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/wild-intertrack-box.mp4" type="video/mp4">
-        </video>
-        <br>
-        <br>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">PICO</div>
-          <div class="column">Ours</div>
-        </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/wild-pico-weight.mp4" type="video/mp4">
-        </video>
-        <br>
-        <br>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">VisTracker</div>
-          <div class="column">Ours</div>
-        </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/wild-vistracker-gas.mp4" type="video/mp4">
-        </video>
-        <br>
-        <br>
-        <div class="columns is-centered has-text-centered is-mobile">
-          <div class="column">Input video</div>
-          <div class="column">VisTracker</div>
-          <div class="column">Ours</div>
-        </div>
-        <video style="text-align:center; width:100%" id="v3" muted loop playsinline controls height="100%">
-          <source src="static/videos/wild-vistracker-jerry.mp4" type="video/mp4">
-        </video>
       </div>
     </div>
 
-
-
-    
-
-
-
-  </div>
+    <br>
+    <br>
+    <div class="columns is-centered has-text-centered">
+      <div class="column is-four-fifths">
+        <h2 class="title is-3 has-text-left">BibTeX</h2>
+        <div class="content has-text-justified">
+          <pre><code>@article{2026cari4d,
+  title={CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction},
+  author={Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield},
+  journal={arXiv},
+  year={2026}
+}</code></pre>
+        </div>
+      </div>
+    </div>
 </section>
 
 
