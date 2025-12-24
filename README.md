@@ -16,3 +16,13 @@ Note: we are currently working on code refractoring and internal code approval. 
 
 ### Updates
 - Dec 16, ArXiv released. 
+
+### Citation
+```bitex
+@article{xie2026cari4d,
+  title={CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction},
+  author={Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield},
+  journal={arXiv},
+  year={2026}
+}
+```
