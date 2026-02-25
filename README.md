@@ -19,10 +19,11 @@ Note: we are currently working on code refractoring and internal code approval. 
 
 ### Citation
 ```bitex
-@article{xie2026cari4d,
-  title={CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction},
-  author={Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield},
-  journal={arXiv},
-  year={2026}
+@inproceedings{xie2026cari4d,
+    title = {CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction},
+    author = {Xie, Xianghui and Wen, Bowen and Chang, Yan and Rabeti, Hesam and Li, Jiefeng and Yuan, Ye and Pons-Moll, Gerard and Birchfield, Stan},
+    booktitle = {Conference on Computer Vision and Pattern Recognition ({CVPR})},
+    month = {June},
+    year = {2026},
 }
 ```
