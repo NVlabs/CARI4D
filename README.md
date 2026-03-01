@@ -106,7 +106,7 @@ We provide additional files to support easy reproduction of the results on BEHAV
 
 
 ## Acknowledgements
-We thank Yu-Wei Chao, Umar Iqbal, Chenran Li, Daniel Zou for the helpful discussion during the project and John Welsh for the help in code release. 
+We thank Yu-Wei Chao, Umar Iqbal, Chenran Li, Yixiao Wang, Daniel Zou for the helpful discussion during the project and John Welsh for the help in code release. 
 This project is built on top of these amazing research projects:
 - [UniDepth](https://github.com/lpiccinelli-eth/UniDepth) for metri-scale depth estimation. 
 - [NLF](https://github.com/isarandi/nlf) and [GENMO](https://github.com/NVlabs/GENMO) for human pose estimation. 
