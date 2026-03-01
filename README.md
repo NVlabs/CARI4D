@@ -1,6 +1,7 @@
 # CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction
+This is the official implementation of our CVPR paper CARI4D.
 [Project Page](https://nvlabs.github.io/CARI4D/) | [ArXiv](https://arxiv.org/abs/2512.11988) 
-
+Authors: Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield
 
 <p align="left">
 <img src="https://github.com/NVlabs/CARI4D/blob/website/static/videos/teaser-cut.gif" alt="teaser" width="80%"/>
@@ -14,7 +15,7 @@
 
 
 ## Updates
-- Feb 27, 2026, code released. 
+- Feb 28, 2026, code released. 
 - Dec 16, 2025, ArXiv released.
 
 ## TODO List
