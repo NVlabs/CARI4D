@@ -1,0 +1,96 @@
+diff --git a/VolumetricSMPL/__init__.py b/VolumetricSMPL/__init__.py
+index b9ad19b..0ac9f1d 100644
+--- a/VolumetricSMPL/__init__.py
++++ b/VolumetricSMPL/__init__.py
+@@ -8,8 +8,9 @@ def attach_volume(parametric_body: smplx.SMPL, pretrained=True, device=None):
+         cfg = {'rf_kwargs': {'rank': 10}, 'decoder_dims': [64, 64, 64, 64, 64, 64], 'decoder_multires': 2, 'decoder_skip_in': [3]}
+     else:
+         cfg = {'rf_kwargs': {'rank': 80}, 'decoder_dims': [64, 64, 64, 64, 64, 64], 'decoder_multires': 2, 'decoder_skip_in': [3]}
+-        if parametric_body.name() == 'SMPL':
++        if parametric_body.name().upper() in ['SMPL', 'SMPL+H']: # By Xianghui: temporal fix, to use smplh model  
+             cfg['decoder_multires'] = 2 if parametric_body.gender == 'neutral' else 0
++
+     volumetric_body = VolumetricSMPL(parametric_body, cfg)
+     setattr(parametric_body, 'volume', volumetric_body)
+     if pretrained:
+@@ -21,7 +22,13 @@ def attach_volume(parametric_body: smplx.SMPL, pretrained=True, device=None):
+         else:
+             checkpoint = f'https://github.com/markomih/VolumetricSMPL/blob/dev/models/VolumetricSMPL_{model_type}_{gender}.ckpt?raw=true'
+         state_dict = torch.hub.load_state_dict_from_url(checkpoint, progress=True)
+-        volumetric_body.load_state_dict(state_dict['state_dict'])
++        # volumetric_body.load_state_dict(state_dict['state_dict'])
++        # for SMPLH model. 
++        for k, v in state_dict['state_dict'].items():
++            if v.shape != volumetric_body.state_dict()[k].shape:
++                state_dict['state_dict'][k] = volumetric_body.state_dict()[k]
++        missing_keys, unexpected_keys = volumetric_body.load_state_dict(state_dict['state_dict'], strict=False)
++        
+     if device is not None:
+         parametric_body = parametric_body.to(device=device)
+ 
+diff --git a/VolumetricSMPL/volumetric_smpl.py b/VolumetricSMPL/volumetric_smpl.py
+index d6cb47d..e7ac622 100644
+--- a/VolumetricSMPL/volumetric_smpl.py
++++ b/VolumetricSMPL/volumetric_smpl.py
+@@ -24,6 +24,14 @@ class Partitioner(torch.nn.Module):
+             13, 14,  # left and right shoulder blade
+             22, 23,  # left and right hand into wrists
+         ], reverse=True),
++        'smplh': sorted([
++            15,  # face into neck
++            10,  # left toes into left foot
++            11,  # right toes into right foot
++            3,  # mid stomach into lower stomach
++            13, 14,  # left and right shoulder blade
++            22, 23,  # left and right hand into wrists
++        ], reverse=True),
+ 
+         'smplx': sorted([
+             15,  # face into neck
+@@ -70,6 +78,36 @@ class Partitioner(torch.nn.Module):
+             (6, 16),  # Spine2 - L_Shoulder
+             (6, 17),  # Spine2 - R_Shoulder
+         ],
++        'smplh': [
++            (1, 2),  # L_Hip - R_Hip
++
++            (1, 3),  # L_Hip - Spine1
++            (2, 3),  # R_Hip - Spine1
++
++            (3, 9),  # Spine1 - Spine3
++
++            (9, 15),  # Spine3 - Head 
++            (9, 16),  # Spine3 - L_Shoulder 
++            (9, 17),  # Spine3 - R_Shoulder 
++
++            (12, 6),  # Neck - Spline2
++            (12, 16),  # Neck - L_Shoulder
++            (12, 17),  # Neck - R_Shoulder
++
++            (13, 6),  # L_Collar - Spine2
++            (13, 12),  # L_Collar - Neck
++            (14, 6),  # R_Collar - Spine2
++            (14, 12),  # R_Collar - neck
++
++            (0, 6),  # pelvis and spine2
++            (0, 9),  # pelvis and spine3
++            (0, 16),  # pelvis and L_Shoulder 
++            (0, 17),  # pelvis and R_Shoulder 
++
++            (6, 16),  # Spine2 - L_Shoulder
++            (6, 17),  # Spine2 - R_Shoulder
++        ],
++
+         'smplx': [
+             (1, 2),  # L_Hip - R_Hip
+ 
+@@ -107,6 +145,9 @@ class Partitioner(torch.nn.Module):
+         super().__init__()
+ 
+         self.model_type = self.get_model_type(parametric_body)
++        if 'smplh' in self.model_type:
++            self.model_type = 'smpl' # By Xianghui: temporal fix, to use smplh model 
++
+         self.merge_body_parts = self.MERGE_BODY_PARTS[self.model_type]
+         self.selfpen_disable_parts = self.SELFPEN_DISABLE_PARTS[self.model_type]
+ 

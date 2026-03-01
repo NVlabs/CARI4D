@@ -1,0 +1,106 @@
+lr: 0.0001
+c_in: 6 # xyz + mask (3 channel, with full obj mask included)
+zfar: 'Infinity'
+debug: 2
+w_rot: 0.8
+w_abs_rot: 0.25
+w_abs_trans: 1
+
+n_view: 1
+run_id: null
+use_BN: true
+rot_rep: 6d
+exp_name: cari4d-release
+config: "learning/configs/chair-dinoxx.yml"
+model_name: "HORefine"
+embed_dim_spatial_temporal: 512 # 768 will be OOM with bs=8
+posi_len: 256 # positional encoding length
+use_fp_pretrained: false
+add_ho_mask: true  # add Human object massk to the depth xyz map
+pose_init_type: random-keyframes
+feat_dim_6dpose: 1024
+feat_dim_mask: 16
+loss_abs_trans_rela: true
+abspose_posi_encode: true
+bnorm_mask: true
+dropout: 0.05
+dropout_1st: 0 
+symm_loss: true
+pred_head_attn: false 
+mixed_spatial_temporal: true
+num_attn_layers: 2 
+cont_out_dim: 2 
+pred_shape: true
+merge_strategy: learned
+merge_factor: 0.0 
+window: 6
+train_smpl_only: false
+w_hum_j: 2.0
+w_hum_t: 1
+w_hum_rot: 1
+w_hum_b: 0.1
+w_contact: 0.1
+fp_err_dim: -1
+input_fp_2nd: false
+input_gtpose_2nd: false
+attn_activation: gelu
+pred_head_dims:
+  - 512
+  - 256
+  - 128
+
+save_dir: experiments
+loss_type: l1-absrot-delta-hum # predict both abs and delta
+optimizer: adam
+
+lr_scheduler:
+  type: 'transformers'
+  kwargs:
+    name: 'linear'
+    num_warmup_steps: 200
+    num_training_steps: 250000 # this is for single GPU, actual steps will be scaled by num_gpus
+
+# data format
+trans_rep: tracknet
+batch_size: 2
+crop_ratio: 1.2
+use_normal: false
+BN_momentum: 0.1
+max_num_key: null
+warmup_step: -1
+input_resize:
+- 224
+- 224
+subtract_transl: true
+mask_rgb_bkg: true
+obj_pose_dim_input: 6 # rot 6d
+mask_dino_type: dinov2_vits14
+mask_encode_type: hum-obj-fullobj
+
+# for evaluation
+max_step_val: 10
+val_step_interval: 250
+ckpt_interval: 200
+num_epochs: 5000
+vis_every_n_steps: 250
+val_at_start: false
+
+normal_uint8: false
+vis_interval: 1000
+weight_decay: 0
+normalize_xyz: true
+clip_grad_norm: 'Infinity'
+rot_normalizer: 0.3490658503988659 # this should be the same for train and test time
+trans_normalizer:
+- 0.5
+- 0.5
+- 0.5
+val_epoch_interval: 10
+num_workers: 3
+
+split_file: 'splits/behave+hodome.json'
+exclude_frames: 'splits/behave-30fps-exclude.json'
+render_root: '/home/xianghuix/datasets/foundpose_train/behave-fp-aligned-dmap'
+rgb_root: '/home/xianghuix/datasets/behave/30fps/h5-full-dmap'
+nlf_root: '/home/xianghuix/datasets/behave/nlf-smplh-2unidepth-v2'
+fp_root: '/home/xianghuix/datasets/behave/fp-unidepth-jump-all-aligned-refine'

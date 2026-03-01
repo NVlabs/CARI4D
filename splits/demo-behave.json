@@ -1,0 +1,12 @@
+{
+  "train": [
+    "Date03_Sub03_chairblack_lift"
+  ],
+  "test": [
+    "Date03_Sub03_chairblack_lift"
+  ],
+  "seqs": [
+    "Date03_Sub03_chairblack_lift"
+  ]
+
+}
