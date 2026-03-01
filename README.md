@@ -1,6 +1,8 @@
 # CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction
-This is the official implementation of our CVPR paper CARI4D.
 [Project Page](https://nvlabs.github.io/CARI4D/) | [ArXiv](https://arxiv.org/abs/2512.11988) 
+
+This is the official implementation of our CVPR paper CARI4D.
+
 Authors: Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield
 
 <p align="left">
