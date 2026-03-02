@@ -21,6 +21,7 @@ For your own RGB videos, please take a look at `data/cari4d-demo/` for example d
     - `<frame_id>-k<kid>.person_mask.png` — human binary mask, `bool` array, shape `(H, W)`
     - `<frame_id>-k<kid>.obj_rend_mask.png` — object binary mask, `bool` array, shape `(H, W)`, For in the wild videos, simply use `kid=0`. 
   - `<frame_id>` is a 6-digit zero-padded frame index (e.g. `000000`, `000001`, …)
+  - The masks will be loaded using [this function](https://github.com/NVlabs/CARI4D/blob/main/behave_data/behave_video.py#L23-L45). 
 
 - Step 3: Run openpose to detect 2D human body keypoints, and pack them into one pkl file using joblib. File format: `<seq>_GT-packed.pkl`. Example file: `data/cari4d-demo/wild/packed/Date03_Sub01_gas_wild002_GT-packed.pkl`.
 

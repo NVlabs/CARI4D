@@ -1,6 +1,8 @@
 # CARI4D: Category Agnostic 4D Reconstruction of Human-Object Interaction
-This is the official implementation of our CVPR paper CARI4D.
 [Project Page](https://nvlabs.github.io/CARI4D/) | [ArXiv](https://arxiv.org/abs/2512.11988) 
+
+This is the official implementation of our CVPR paper CARI4D.
+
 Authors: Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, Gerard Pons-Moll, Stan Birchfield
 
 <p align="left">
@@ -104,7 +106,7 @@ We provide additional files to support easy reproduction of the results on BEHAV
 
 
 ## Acknowledgements
-We thank John Welsh for the help in code release. 
+We thank Yu-Wei Chao, Umar Iqbal, Chenran Li, Yixiao Wang, Daniel Zou for the helpful discussion during the project and John Welsh for the help in code release. 
 This project is built on top of these amazing research projects:
 - [UniDepth](https://github.com/lpiccinelli-eth/UniDepth) for metri-scale depth estimation. 
 - [NLF](https://github.com/isarandi/nlf) and [GENMO](https://github.com/NVlabs/GENMO) for human pose estimation. 
