@@ -148,7 +148,7 @@ class FPFilterTwoDirProcessor(FPBehaveVideoProcessor):
                 pose = est.register(K=K_all[enum_idx], rgb=color, depth=depth, ob_mask=mask_o.astype(bool),
                                     iteration=5,
                                     vis_score_path=score_vis, vis_refine_path=refine_vis,
-                                    rgb_only=False, both_depth_and_rgb=True, preprocess_depth='std' not in args.video)
+                                    rgb_only=False, both_depth_and_rgb=True)
                 t3 = time.time()
                 # do some basic filtering
                 tf_to_centered = est.get_tf_to_centered_mesh()
