@@ -7,16 +7,6 @@
 </p>
 
 
-Note: we are currently working on code refractoring and internal code approval. Expected code release in January 2026, stay tuned! 
-
-### TODO List
-- [ ] Demo code.
-- [ ] Inference on full BEHAVE.
-- [ ] Evaluation on BEHAVE dataset. 
-
-### Updates
-- Dec 16, ArXiv released. 
-
 ### Citation
 ```bitex
 @inproceedings{xie2026cari4d,
