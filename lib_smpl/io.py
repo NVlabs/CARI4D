@@ -44,6 +44,10 @@ def get_pose_mapping(blend_shape_type):
     Returns:
         A function that maps pose parameters to blend shape coefficients
     """
+    if isinstance(blend_shape_type, np.ndarray) and blend_shape_type.shape == ():
+        blend_shape_type = blend_shape_type.item()
+    if isinstance(blend_shape_type, (bytes, np.bytes_)):
+        blend_shape_type = blend_shape_type.decode('utf-8')
     if blend_shape_type == 'lrotmin':
         return compute_local_rotation_offsets
     else:
