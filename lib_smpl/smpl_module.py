@@ -69,7 +69,9 @@ class SMPLLayer(Module):
             torch.Tensor(model_data['v_template'].r.copy()).unsqueeze(0))
         self.register_buffer(
             'th_J_regressor',
-            torch.Tensor(np.array(model_data['J_regressor'].toarray())))
+            torch.Tensor(np.array(model_data['J_regressor'].toarray()
+                                  if hasattr(model_data['J_regressor'], 'toarray')
+                                  else model_data['J_regressor'])))
         self.register_buffer('th_weights',
                              torch.Tensor(model_data['weights'].r.copy()))
         self.register_buffer('th_faces',
