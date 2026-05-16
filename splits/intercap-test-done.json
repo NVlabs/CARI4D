@@ -1,0 +1,51 @@
+{
+  "seqs": [
+    "ICapS02_sub09_obj07_Seg_1",
+    "ICapS02_sub10_obj01_Seg_0",
+    "ICapS02_sub09_obj10_Seg_0",
+    "ICapS02_sub09_obj01_Seg_1",
+    "ICapS02_sub09_obj01_Seg_2",
+    "ICapS02_sub10_obj01_Seg_1",
+    "ICapS02_sub09_obj04_Seg_0",
+    "ICapS02_sub10_obj02_Seg_1",
+    "ICapS02_sub09_obj04_Seg_1",
+    "ICapS02_sub10_obj10_Seg_1",
+    "ICapS02_sub09_obj07_Seg_0",
+    "ICapS02_sub09_obj05_Seg_0",
+    "ICapS02_sub10_obj02_Seg_0",
+    "ICapS02_sub09_obj01_Seg_0",
+    "ICapS02_sub10_obj07_Seg_0",
+    "ICapS02_sub10_obj04_Seg_1",
+    "ICapS02_sub10_obj07_Seg_1",
+    "ICapS02_sub10_obj10_Seg_0",
+    "ICapS02_sub10_obj04_Seg_0",
+    "ICapS02_sub09_obj10_Seg_1",
+    "ICapS02_sub09_obj02_Seg_0"
+  ],
+  "train": [
+    "ICapS02_sub09_obj07_Seg_1"
+  ],
+  "test": [
+    "ICapS02_sub09_obj07_Seg_1",
+    "ICapS02_sub10_obj01_Seg_0",
+    "ICapS02_sub09_obj10_Seg_0",
+    "ICapS02_sub09_obj01_Seg_1",
+    "ICapS02_sub09_obj01_Seg_2",
+    "ICapS02_sub10_obj01_Seg_1",
+    "ICapS02_sub09_obj04_Seg_0",
+    "ICapS02_sub10_obj02_Seg_1",
+    "ICapS02_sub09_obj04_Seg_1",
+    "ICapS02_sub10_obj10_Seg_1",
+    "ICapS02_sub09_obj07_Seg_0",
+    "ICapS02_sub09_obj05_Seg_0",
+    "ICapS02_sub10_obj02_Seg_0",
+    "ICapS02_sub09_obj01_Seg_0",
+    "ICapS02_sub10_obj07_Seg_0",
+    "ICapS02_sub10_obj04_Seg_1",
+    "ICapS02_sub10_obj07_Seg_1",
+    "ICapS02_sub10_obj10_Seg_0",
+    "ICapS02_sub10_obj04_Seg_0",
+    "ICapS02_sub09_obj10_Seg_1",
+    "ICapS02_sub09_obj02_Seg_0"
+  ]
+}
