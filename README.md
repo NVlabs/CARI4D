@@ -13,6 +13,7 @@ Authors: Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, 
 - [Installation](#installation)
 - [Run demo](#run-demo)
 - [Acknowledgements](#acknowledgements)
+- [Training](#training)
 - [Citation](#citation)
 
 
@@ -27,6 +28,7 @@ Authors: Xianghui Xie, Bowen Wen, Yan Chang, Hesam Rabeti, Jiefeng Li, Ye Yuan, 
 - [x] Demo on BEHAVE video.
 - [x] Evaluation on BEHAVE dataset. 
 - [x] Example training.
+- [x] Demo on generated videos.
 
 ## Installation
 
@@ -98,6 +100,8 @@ Note that you need to download the packed GT files from [here](https://huggingfa
 
 ### Process your own video
 Please see [this doc](./docs/custom_video.md) for detailed step by step instructions. 
+
+For example data from generated videos, see [this link](https://huggingface.co/nvidia/CARI4D/blob/main/generated-videos.zip).
 
 
 ### Reproduce results
